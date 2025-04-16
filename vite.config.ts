@@ -4,7 +4,7 @@ import path from "path"
 import { componentTagger } from "lovable-tagger"
 
 export default defineConfig(({ mode }) => ({
-  base: "/FlorianM-C22.github.io/", // Use repository name as base path
+  base: "./", // Use relative paths for all assets
   server: {
     host: "::",
     port: 8080,
