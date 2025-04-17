@@ -34,15 +34,15 @@ const ResumeSection = () => {
     {
       id: 1,
       period: "2024 - 2026",
-      degree: "Master's in Computer Science",
-      institution: "Tech University",
+      degree: "Extension Programs: Web Full Stack",
+      institution: "Holberton School",
       description:
         "Second-year specialization centered on modern web development technologies and best practices. Training included front-end frameworks such as React, back-end development with Node.js, API design, state management, and database integration. Projects focused on building full-featured, scalable web applications while applying agile methodologies and ensuring code quality and maintainability.",
     },
     {
       id: 2,
       period: "2023 - 2024",
-      degree: "Bachelor's in Computer Science",
+      degree: "Foundations of Computer Science",
       institution: "Holberton School",
       description:
         "Completion of an intensive first-year program focused on core software engineering principles. Curriculum included low-level programming in C, algorithms and data structures, Linux and system administration, as well as Git and collaborative workflows. Emphasis placed on peer learning, autonomy, and project-based assessments to simulate real-world development environments.",
