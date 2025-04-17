@@ -1,65 +1,53 @@
-
-import { motion } from "framer-motion";
-import { FileText, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion"
+import { FileText, Download } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface Experience {
-  id: number;
-  period: string;
-  role: string;
-  company: string;
-  description: string;
+  id: number
+  period: string
+  role: string
+  company: string
+  description: string
 }
 
 interface Education {
-  id: number;
-  period: string;
-  degree: string;
-  institution: string;
-  description: string;
+  id: number
+  period: string
+  degree: string
+  institution: string
+  description: string
 }
 
 const ResumeSection = () => {
   const experiences: Experience[] = [
     {
       id: 1,
-      period: "2021 - Present",
-      role: "Senior Web Developer",
-      company: "TechCorp Inc.",
-      description: "Developed and maintained complex web applications with React and TypeScript. Led a team of 3 developers and implemented CI/CD pipelines to streamline deployment processes.",
+      period: "2024 - Present",
+      role: "Junior Web Developer",
+      company: "Shortways",
+      description:
+        "Contributing to the development and maintenance of a digital adoption platform designed for large enterprises. The solution integrates seamlessly with ERP and HRIS software, acting as an intelligent assistant that enhances user experience by simplifying navigation and improving usability across complex business tools. Worked primarily with React and TypeScript, focusing on delivering scalable, user-friendly features tailored to enterprise needs.",
     },
-    {
-      id: 2,
-      period: "2019 - 2021",
-      role: "Web Developer",
-      company: "Digital Solutions Ltd.",
-      description: "Built responsive websites and web applications using modern JavaScript frameworks. Collaborated with designers to implement UI/UX improvements and optimize website performance.",
-    },
-    {
-      id: 3,
-      period: "2017 - 2019",
-      role: "Junior Developer",
-      company: "WebStart Agency",
-      description: "Assisted in the development of client websites, fixed bugs, and implemented new features using HTML, CSS, and JavaScript.",
-    },
-  ];
+  ]
 
   const education: Education[] = [
     {
       id: 1,
-      period: "2015 - 2017",
+      period: "2024 - 2026",
       degree: "Master's in Computer Science",
       institution: "Tech University",
-      description: "Specialized in web technologies and software engineering. Completed thesis on optimizing web application performance.",
+      description:
+        "Second-year specialization centered on modern web development technologies and best practices. Training included front-end frameworks such as React, back-end development with Node.js, API design, state management, and database integration. Projects focused on building full-featured, scalable web applications while applying agile methodologies and ensuring code quality and maintainability.",
     },
     {
       id: 2,
-      period: "2011 - 2015",
+      period: "2023 - 2024",
       degree: "Bachelor's in Computer Science",
-      institution: "State University",
-      description: "Foundations in computer science, algorithms, and data structures. Participated in web development club projects.",
+      institution: "Holberton School",
+      description:
+        "Completion of an intensive first-year program focused on core software engineering principles. Curriculum included low-level programming in C, algorithms and data structures, Linux and system administration, as well as Git and collaborative workflows. Emphasis placed on peer learning, autonomy, and project-based assessments to simulate real-world development environments.",
     },
-  ];
+  ]
 
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -71,7 +59,7 @@ const ResumeSection = () => {
         duration: 0.5,
       },
     }),
-  };
+  }
 
   return (
     <section id="resume" className="py-20 bg-white dark:bg-gray-900">
@@ -87,7 +75,8 @@ const ResumeSection = () => {
             custom={0}
             className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
           >
-            My <span className="text-indigo-600 dark:text-indigo-400">Resume</span>
+            My{" "}
+            <span className="text-indigo-600 dark:text-indigo-400">Resume</span>
           </motion.h2>
           <motion.div
             variants={fadeInUpVariants}
@@ -99,14 +88,11 @@ const ResumeSection = () => {
             custom={2}
             className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8"
           >
-            My education and professional experience in web development and design.
+            My education and professional experience in web development and
+            design.
           </motion.p>
-          <motion.div
-            variants={fadeInUpVariants}
-            custom={3}
-            className="mb-12"
-          >
-            <Button 
+          <motion.div variants={fadeInUpVariants} custom={3} className="mb-12">
+            <Button
               size="lg"
               className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full"
             >
@@ -205,7 +191,7 @@ const ResumeSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ResumeSection;
+export default ResumeSection

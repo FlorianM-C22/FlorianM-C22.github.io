@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { ExternalLink, Github } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -10,97 +10,65 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog"
 
 interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  featured: boolean;
+  id: number
+  title: string
+  description: string
+  image: string
+  category: string
+  technologies: string[]
+  liveUrl?: string
+  githubUrl?: string
+  featured: boolean
 }
 
 const PortfolioSection = () => {
-  const [filter, setFilter] = useState("all");
-  
+  const [filter, setFilter] = useState("all")
+
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Website",
-      description: "A fully responsive e-commerce platform with product filtering, cart functionality, and payment integration.",
-      image: "placeholder.svg",
+      title: "Homie",
+      description:
+        "A an open source homelab deployment tool. This is my end of year 1 project for Holberton School.",
+      image: "/homie-logo.png",
       category: "web",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
+      technologies: ["React", "Typescript", "Next.js", "Tailwind CSS"],
+      githubUrl: "https://github.com/florianM-C22/homie",
       featured: true,
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A productivity app that helps users organize tasks with drag-and-drop functionality and priority setting.",
-      image: "placeholder.svg",
+      title: "Pokéscratch",
+      description:
+        "A fun and interactive Pokémon guessing game where players scratch virtual cards to reveal Pokémon and test their knowledge!",
+      image: "/pokescratch-logo.png",
       category: "app",
-      technologies: ["React", "Redux", "Firebase"],
-      liveUrl: "#",
-      githubUrl: "#",
+      technologies: ["React", "Typescript", "Next.js", "Tailwind CSS"],
+      githubUrl: "https://github.com/florianM-C22/pokescratch",
       featured: true,
     },
     {
       id: 3,
-      title: "Personal Blog",
-      description: "A blog platform with markdown support, comment system, and category filtering.",
-      image: "placeholder.svg",
-      category: "web",
-      technologies: ["Next.js", "Tailwind CSS", "GraphQL"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
-      id: 4,
-      title: "Weather Dashboard",
-      description: "A weather application that shows forecast data with beautiful visualizations.",
-      image: "placeholder.svg",
+      title: "Buddy",
+      description:
+        "Work in progress: Mobile app that allows you to find your friends in real time.",
+      image: "/buddy-logo.png",
       category: "app",
-      technologies: ["React", "Chart.js", "Weather API"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-    {
-      id: 5,
-      title: "Portfolio Website",
-      description: "A responsive portfolio website showcasing my skills and projects.",
-      image: "placeholder.svg",
-      category: "web",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
+      technologies: ["React Native", "Typescript", "C#"],
+      githubUrl: "",
       featured: true,
     },
-    {
-      id: 6,
-      title: "Recipe Finder",
-      description: "An application to find recipes based on available ingredients.",
-      image: "placeholder.svg",
-      category: "app",
-      technologies: ["React", "API Integration", "CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
-    },
-  ];
+  ]
 
-  const filteredProjects = filter === "all" 
-    ? projects 
-    : filter === "featured" 
-      ? projects.filter(project => project.featured) 
-      : projects.filter(project => project.category === filter);
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : filter === "featured"
+      ? projects.filter((project) => project.featured)
+      : projects.filter((project) => project.category === filter)
 
   const fadeInVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -112,7 +80,7 @@ const PortfolioSection = () => {
         duration: 0.5,
       },
     }),
-  };
+  }
 
   return (
     <section id="portfolio" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -128,7 +96,10 @@ const PortfolioSection = () => {
             custom={0}
             className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4"
           >
-            My <span className="text-indigo-600 dark:text-indigo-400">Portfolio</span>
+            My{" "}
+            <span className="text-indigo-600 dark:text-indigo-400">
+              Portfolio
+            </span>
           </motion.h2>
           <motion.div
             variants={fadeInVariants}
@@ -140,7 +111,7 @@ const PortfolioSection = () => {
             custom={2}
             className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
-            Check out some of my recent work. Each project represents a unique challenge and solution.
+            Check out some of my recent work.
           </motion.p>
         </motion.div>
 
@@ -209,11 +180,11 @@ const PortfolioSection = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <Card className="overflow-hidden group cursor-pointer transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                    <div className="h-48 w-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                    <div className="h-56 w-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex items-center justify-center">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                     <CardContent className="p-5">
@@ -248,21 +219,25 @@ const PortfolioSection = () => {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-lg">
                   <DialogHeader>
-                    <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+                    <DialogTitle className="text-2xl">
+                      {project.title}
+                    </DialogTitle>
                     <DialogDescription>
                       <div className="mt-4">
-                        <div className="mb-4 h-56 rounded-md overflow-hidden bg-gray-200 dark:bg-gray-700">
+                        <div className="mb-4 h-56 rounded-md overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                           />
                         </div>
                         <p className="text-gray-700 dark:text-gray-300 mb-4">
                           {project.description}
                         </p>
                         <div className="mb-4">
-                          <h4 className="text-sm font-medium mb-2">Technologies:</h4>
+                          <h4 className="text-sm font-medium mb-2">
+                            Technologies:
+                          </h4>
                           <div className="flex flex-wrap gap-2">
                             {project.technologies.map((tech) => (
                               <span
@@ -308,7 +283,7 @@ const PortfolioSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PortfolioSection;
+export default PortfolioSection

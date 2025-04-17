@@ -1,19 +1,18 @@
-
-import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import ParticleBackground from "./ParticleBackground";
+import { motion } from "framer-motion"
+import { ArrowDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import ParticleBackground from "./ParticleBackground"
 
 const HeroSection = () => {
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
+    const aboutSection = document.getElementById("about")
     if (aboutSection) {
       window.scrollTo({
         top: aboutSection.offsetTop,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -23,7 +22,7 @@ const HeroSection = () => {
         staggerChildren: 0.3,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -36,7 +35,7 @@ const HeroSection = () => {
         stiffness: 100,
       },
     },
-  };
+  }
 
   return (
     <section
@@ -44,7 +43,7 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <ParticleBackground />
-      
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -56,12 +55,16 @@ const HeroSection = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 mb-6"
           >
-            Hello, I'm <span className="text-indigo-700 dark:text-indigo-300">Your Name</span>
+            Hello, I'm{" "}
+            <span className="text-indigo-700 dark:text-indigo-300">
+              Florian Meignan
+            </span>
           </motion.h1>
 
           <motion.div variants={itemVariants}>
             <h2 className="text-xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8">
-              I'm a <span className="font-semibold">Web Developer</span>
+              I'm a{" "}
+              <span className="font-semibold">Junior Full Stack Developer</span>
             </h2>
           </motion.div>
 
@@ -81,12 +84,12 @@ const HeroSection = () => {
               variant="outline"
               className="rounded-full border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white dark:border-indigo-400 dark:text-indigo-400 dark:hover:bg-indigo-400 dark:hover:text-gray-900 px-8"
               onClick={() => {
-                const portfolioSection = document.getElementById("portfolio");
+                const portfolioSection = document.getElementById("portfolio")
                 if (portfolioSection) {
                   window.scrollTo({
                     top: portfolioSection.offsetTop,
                     behavior: "smooth",
-                  });
+                  })
                 }
               }}
             >
@@ -103,7 +106,7 @@ const HeroSection = () => {
           duration: 1,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
         onClick={scrollToAbout}
@@ -111,7 +114,7 @@ const HeroSection = () => {
         <ArrowDown className="text-indigo-600 dark:text-indigo-400" />
       </motion.div>
     </section>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection
